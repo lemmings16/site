@@ -17,6 +17,10 @@ app = Flask(
 def index():
   return render_template('index.html')
 
+@app.route("/info/<string:game>/")
+def hello(game):
+    return render_template('shop.html', game=game)
+
 if __name__ == '__main__':
   # Run the Flask app
   app.run(
@@ -25,10 +29,6 @@ if __name__ == '__main__':
 	port=8080
   )
 
-  
-@app.route("/hello/<string:name>/")
-def hello(name):
-    return render_template(
-        'shop.html',name=name)
- 
+
+
 app.run()
