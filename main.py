@@ -1,6 +1,8 @@
 
 
 
+
+
 from flask import Flask, render_template
 
 # Create a flask app
@@ -22,3 +24,11 @@ if __name__ == '__main__':
 	debug=True,
 	port=8080
   )
+
+  
+@app.route("/hello/<string:name>/")
+def hello(name):
+    return render_template(
+        'shop.html',name=name)
+ 
+app.run()
