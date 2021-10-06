@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Stats 4 Games</title>
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+
+
+  <table border="4px">
+  <tr>
+    <td> Games </td>
+    <td> Verkochte kopies</td> 
+    <td> Spelers per dag </td>
+    <td> Leeftijden </td>
+    <td> Genres </td>
+  </tr>
+
+  
+  {% for game in games %}
+  <tr>
+    <td> {{game['naam']}} </td>
+    <td> {{game['verkochte_kopies']}} </td>
+    <td> {{game['spelers_per_dag']}} </td>
+    <td> {{game['leeftijden']}} </td>
+    <td> {{game['genres']}} </td>
+
+  </tr>
+  {% endfor %}
+
+  
+ </table>
+    <script src="script.js"></script>
+  </body>
+</html>

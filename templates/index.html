@@ -9,27 +9,38 @@
   <body>
     <img src="https://th.bing.com/th/id/OIP.gxhO643_jqv-oNX0_0vXfQHaFj?w=215&h=180&c=7&r=0&o=5&pid=1.7" width="200px">
     <h1> Stats 4 Games </h1>
-    <p>
+    <p> <h4>
      Hoi! Welkom op mijn website.<br>
-     Hier ga ik het hebben over video spellen, hun statistieken, prijzen en tot slot wat ik ze rate. Als jij een specefieke game wilt bekijken kun je dat doen door boven in het linkje na de laatste / "info (game naam) te typen.
+     Hier ga ik het hebben over video spellen, hun statistieken, prijzen en tot slot wat ik ze rate. Als jij een specefieke game wilt bekijken kun je dat doen door boven in het linkje na de laatste / "info (game naam)" te typen! </h4>
     
       </p>
     <p>
+    <p> Als je een specefieke game wilt vinden kan je dat hieronder invoeren. </p>
+    <form action="/game_invoer" method="post">
+      <div>
+        <label for="name">Naam van game:</label>
+        <input type="text" id="invoer_game" name="invoer_game">
+      </div>  
+      <div>
+        <input type="submit" value="Verzend bericht">
+      </div>
+    </form>
+
     
       </p>
       <p>
       Laat me beginnen met wat ik allemaal ga laten zien.<br>
-      Ten eerste ga de spellen opnoemen waar ik het over ga hebben, daarna zal ik wat statistieken geven zoal: spelers per dag, leeftijd, wat voor soort spel het is en aantal verkochte kopieën
+      Ten eerste ga de spellen opnoemen waar ik het over ga hebben, daarna zal ik wat statistieken geven zoal: spelers per dag, leeftijd, wat voor soort spel het is en aantal verkochte kopieën.
     <br>
       </p>
       <p>
       
-      Tijd om te beginnen
+      Tijd om te beginnen.
 
         </p>
         <img src="https://th.bing.com/th/id/OIP.cVl1VWZ9qCjpy3moHdlggwHaD3?pid=ImgDet&rs=1">
      
-        <h3> De spellen waar we het over gaan hebben </h3><br>
+        <h3> De spellen op deze site: </h3><br>
           <ul>
         <li>Minecraft</li>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Minecraft_cube.svg/500px-Minecraft_cube.svg.png" width="100px">
@@ -41,53 +52,35 @@
         <img src="https://th.bing.com/th/id/OIP.QF53PD2iwvbhlSADQH5QMQHaEK?w=286&h=180&c=7&r=0&o=5&pid=1.7" width="100px"> 
         </ul>
         <p>
-          Nu tijd om echt in de statistieken te duiken 
+          Nu tijd om echt in de statistieken te duiken. 
           </p>
-          
+
           <h2> De stats </h2>
-        <table border="2px">
-          <tr>
-            <td> Naam </td>
-            <td> Verkochte kopies</td> 
-            <td> Spelers per dag </td>
-            <td> Leeftijd </td>
-            <td> Genre </td>
-            </tr>
-           
+      
+  <table border="2px">
+  <tr>
+    <td> Games </td>
+    <td> Verkochte kopies</td> 
+    <td> Spelers per dag </td>
+    <td> Leeftijden </td>
+    <td> Genres </td>
+  </tr>
 
-         <tr>
-           <td> Minecraft </td>
-           <td> 200 miljoen </td>
-           <td> 857 duizend </td>
-           <td> 10 jaar </td> 
-           <td> Sandbox </td>
-         
-         
-         </tr>
+  {% for game in games %}
+  <tr>
+    <td> {{game['naam']}} </td>
+    <td> {{game['verkochte_kopies']}} </td>
+    <td> {{game['spelers_per_dag']}} </td>
+    <td> {{game['leeftijden']}} </td>
+    <td> {{game['genres']}} </td>
+  </tr>
+  {% endfor %}
 
-         <tr>
-         <td> Counter-Strike:Global Offensive(CS:GO) </td>
-         <td> 30 miljoen </td>
-         <td> 507 duizend </td>
-         <td> Negen jaar </td>
-         <td> First-Person Shooter(FPS) </td> 
-           </tr>
-        <tr>
-          <td> Valorant </td>
-          <td> 14 miljoen </td>
-          <td> 251 duizend </td>
-          <td> 1 jaar en 2 maanden </td>
-          <td> First-Person Shooter(FPS) </td>
-           
-        </tr>
-
-        <tr>
-          <td> Grand Theft Auto V(GTAV) </td>
-          <td> 120 milhoen </td>
-          <td> 130 duizend </td>
-          <td> 8 jaar </td>
-          <td> Open World </td>
+       
         </table>
+
+
+       
         
   
     <script src="script.js"></script>
